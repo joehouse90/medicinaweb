@@ -1,0 +1,93 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin card-hover {
+    transition: all 0.3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@mixin card-base {
+    background-color: rgba($color-white, 0.9);
+    border-radius: $border-radius;
+    padding: $spacing-lg;
+    box-shadow: $shadow-default;
+}
+
+@mixin button-base {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+        @media screen and (max-width: $mobile) { @content; }
+    } @else if $breakpoint == tablet {
+        @media screen and (max-width: $tablet) { @content; }
+    } @else if $breakpoint == desktop {
+        @media screen and (min-width: $desktop) { @content; }
+    }
+}
+
+@mixin fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@mixin nav-link-animation {
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $color-secondary;
+        transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -1,0 +1,243 @@
+// Home Page
+.hero-section {
+    position: relative;
+    min-height: 80vh;
+    @include flex-center;
+    text-align: center;
+    padding: $spacing-xxl 0;
+    background: rgba($color-white, $opacity-white-bg-lighter);
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        @include fade-in;
+
+        h1 {
+            font-size: 2.5rem;
+            color: $color-text;
+            margin-bottom: $spacing-lg;
+        }
+
+        p {
+            font-size: $font-size-lg;
+            margin-bottom: $spacing-xl;
+        }
+    }
+}
+
+.beneficios-section {
+    padding: $spacing-xxl 0;
+    background: rgba($color-white, $opacity-white-bg);
+
+    .beneficios-container {
+        max-width: $beneficios-max-width;
+        margin: 0 auto;
+
+        .grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: $spacing-xl;
+        }
+    }
+
+    .beneficio-item {
+        text-align: center;
+        padding: $spacing-lg;
+        @include fade-in;
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: $spacing-md;
+        }
+
+        h3 {
+            color: $color-primary;
+            margin-bottom: $spacing-sm;
+        }
+    }
+}
+
+// Productos Page
+.productos-section {
+    padding: $spacing-xxl 0;
+
+    .productos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: $spacing-xl;
+        padding: $spacing-lg;
+    }
+
+    .filtros {
+        margin-bottom: $spacing-xl;
+        padding: $spacing-lg;
+        background: rgba($color-white, $opacity-white-bg);
+        border-radius: $border-radius;
+
+        .form-group {
+            display: flex;
+            gap: $spacing-md;
+            align-items: center;
+        }
+    }
+}
+
+// Testimonios Page
+.testimonios-section {
+    padding: $spacing-xxl 0;
+    background: rgba($color-white, $opacity-white-bg-darker);
+
+    .testimonio {
+        width: $testimonio-width;
+        margin: 0 auto;
+        text-align: center;
+        padding: $spacing-xl;
+
+        .testimonio-texto {
+            font-style: italic;
+            margin-bottom: $spacing-lg;
+        }
+
+        .testimonio-autor {
+            font-weight: $font-weight-bold;
+            color: $color-primary;
+        }
+
+        .testimonio-imagen {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto $spacing-md;
+            object-fit: cover;
+        }
+    }
+}
+
+// Contacto Page
+.contacto-section {
+    padding: $spacing-xxl 0;
+
+    .contacto-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: rgba($color-white, $opacity-white-bg);
+        padding: $spacing-xl;
+        border-radius: $border-radius;
+        box-shadow: $shadow-default;
+
+        h2 {
+            text-align: center;
+            margin-bottom: $spacing-xl;
+        }
+
+        .form-group {
+            margin-bottom: $spacing-lg;
+
+            label {
+                display: block;
+                margin-bottom: $spacing-xs;
+                font-weight: $font-weight-semibold;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: $spacing-sm;
+                border: 1px solid $color-border;
+                border-radius: $border-radius;
+
+                &:focus {
+                    border-color: $color-primary;
+                    box-shadow: 0 0 0 $focus-shadow-size rgba($color-primary, $focus-shadow-opacity);
+                }
+            }
+
+            textarea {
+                min-height: 150px;
+                resize: vertical;
+            }
+        }
+    }
+
+    .info-contacto {
+        margin-top: $spacing-xl;
+        text-align: center;
+
+        .info-item {
+            margin-bottom: $spacing-lg;
+
+            i {
+                color: $color-primary;
+                margin-right: $spacing-xs;
+            }
+        }
+    }
+}
+
+// About Page
+.about-section {
+    padding: $spacing-xxl 0;
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba($color-white, $opacity-white-bg);
+        padding: $spacing-xl;
+        border-radius: $border-radius;
+        box-shadow: $shadow-default;
+
+        h2 {
+            text-align: center;
+            margin-bottom: $spacing-xl;
+        }
+
+        .historia {
+            margin-bottom: $spacing-xl;
+        }
+
+        .mision-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $spacing-xl;
+
+            @include responsive(mobile) {
+                grid-template-columns: 1fr;
+            }
+
+            div {
+                padding: $spacing-lg;
+                background: rgba($color-white, $opacity-white-bg-darker);
+                border-radius: $border-radius;
+            }
+        }
+
+        .equipo {
+            margin-top: $spacing-xl;
+
+            .miembros {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: $spacing-lg;
+
+                .miembro {
+                    text-align: center;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        margin-bottom: $spacing-sm;
+                    }
+
+                    h4 {
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    p {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}

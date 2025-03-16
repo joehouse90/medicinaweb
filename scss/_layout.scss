@@ -1,0 +1,135 @@
+// Header
+header {
+    @include flex-between;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-lg;
+    box-shadow: $shadow-light;
+
+    .logo {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xl;
+        justify-content: flex-start;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            gap: $spacing-lg;
+
+            li {
+                a {
+                    color: $color-white;
+                    font-weight: bold;
+                    transition: $transition-base;
+                    @include nav-link-animation;
+
+                    &:hover {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(mobile) {
+        flex-direction: column;
+        
+        .logo-container {
+            flex-direction: column;
+            gap: $spacing-sm;
+        }
+
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: $spacing-lg 0;
+    background-color: $color-primary;
+    color: $color-white;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// Pages Layout
+.inicio-page {
+    background-color: $color-background;
+    background-image: url('../assets/imagen.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-lg;
+
+    .logo-container {
+        @include flex-center;
+        gap: $spacing-xl;
+    }
+
+    nav ul {
+        @include flex-center;
+    }
+
+    main {
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    section {
+        @include card-base;
+    }
+
+    #bienvenido, 
+    #que-ofrecemos {
+        background-color: rgba($color-white, 0.95);
+        color: $color-text;
+        text-shadow: 1px 1px 2px rgba($color-white, 0.7);
+    }
+}
+
+.productos-page {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-lg;
+        padding: $spacing-lg;
+    }
+
+    .cuadro {
+        @include card-base;
+        @include card-hover;
+    }
+
+    h2 {
+        background-color: rgba($color-white, 0.8);
+        border: 2px solid $color-text;
+        padding: $spacing-sm $spacing-lg;
+        border-radius: $border-radius;
+        text-align: center;
+        color: $color-text;
+        font-size: $font-size-xl;
+        margin: $spacing-lg auto;
+        width: fit-content;
+    }
+
+    @include responsive(mobile) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+    }
+}

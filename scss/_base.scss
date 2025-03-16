@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+input, textarea {
+    outline: none;
+}
+
+body {
+    font-family: $font-family-base;
+    line-height: 1.6;
+    background-color: $color-background;
+    background-image: url('../assets/imagen.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: $spacing-lg;
+}
+
+section {
+    @include card-base;
+    margin-bottom: $spacing-lg;
+}
+
+h2, h3 {
+    color: $color-text;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+}
+

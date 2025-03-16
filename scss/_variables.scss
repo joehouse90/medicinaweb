@@ -1,0 +1,40 @@
+// Colors
+$color-primary: rgba(58, 107, 58, 0.9);
+$color-primary-hover: #45a049;
+$color-secondary: #d4d700;
+$color-text: #2c3e50;
+$color-white: #fff;
+$color-success: #4CAF50;
+$color-success-hover: #45a049;
+$color-background: #f9f9f9;
+$color-border: #ddd;
+
+// Shadows
+$shadow-default: 0 4px 10px rgba(0, 0, 0, 0.3);
+$shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+// Border radius
+$border-radius: 8px;
+$border-radius-lg: 15px;
+
+// Typography
+$font-family-base: 'Arial', sans-serif;
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+
+// Transitions
+$transition-base: all 0.3s ease;
+
